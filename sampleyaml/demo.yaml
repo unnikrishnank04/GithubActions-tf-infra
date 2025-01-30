@@ -1,0 +1,23 @@
+name: demogithubaction
+on: push
+jobs:
+  linux:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: "Checking linux commands"
+        run: echo "Going to check linux commands"
+      - name: "multiple linux commands execution"
+        run: |
+          pwd
+          whoami
+          hostname
+          ifconfig -a
+          cd /tmp/
+          wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.93/bin/apache-tomcat-9.0.93.tar.gz
+          ls -ltr
+          sleep 3
+          echo "deleting the file apache-tomcat-9.0.93.tar.gz in the ${pwd}"
+          rm -rf apache-tomcat-9.0.93.tar.gz
+          ls -ltr
+          echo "Work is done. Going to exit"
+          
